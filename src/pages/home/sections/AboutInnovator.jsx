@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Innovator from '../../../../public/images/innovator.jpg';
 import Joseph from '../../../../public/images/team/Sales.jpg';
-import Grace from '../../../../public/images/team/Production Lead.jpg'
+import Grace from '../../../../public/images/team/Production Lead.jpg';
 
 const AboutInnovator = () => {
   const [activeTeamMember, setActiveTeamMember] = useState(0);
@@ -22,31 +22,35 @@ const AboutInnovator = () => {
   ];
 
   return (
-    <section id='innovator' className="relative bg-[#f5fff5] py-16 md:py-24 lg:py-32">
+    <section
+      id="innovator"
+      className="relative bg-[#f5fff5] py-16 md:py-24 lg:py-32 overflow-x-hidden max-w-full" // ✅ overflow fix here
+    >
       {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#2e7d32]/10 rounded-full mix-blend-multiply blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#1b5e20]/10 rounded-full mix-blend-multiply blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-[#2e7d32]/10 rounded-full mix-blend-multiply blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-[#1b5e20]/10 rounded-full mix-blend-multiply blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative">
+      <div className="container mx-auto px-4 sm:px-6 relative overflow-x-hidden">
+        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
             Meet Our <span className="text-[#2e7d32]">Team</span>
           </h2>
           <div className="w-20 md:w-24 h-1 bg-[#2e7d32] mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-lg text-gray-600 mb-4 max-w-3xl mx-auto">
             Our team is comprised of passionate and dedicated individuals who share a common goal of harnessing the power of mushrooms to improve lives. With diverse backgrounds and expertise, we work together to drive innovation and sustainability in the industry.
           </p>
         </div>
 
         {/* Team Member Selection */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
           {teamMembers.map((member, index) => (
             <button
               key={index}
               onClick={() => setActiveTeamMember(index)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base ${
                 activeTeamMember === index
                   ? 'bg-[#2e7d32] text-white shadow-lg'
                   : 'bg-gray-200 text-gray-600 hover:bg-gray-100 hover:shadow'
@@ -58,33 +62,34 @@ const AboutInnovator = () => {
         </div>
 
         {/* Active Team Member Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative group p-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Image */}
+          <div className="relative group p-2 sm:p-4 w-full overflow-hidden">
             <img
               src={teamMembers[activeTeamMember].image}
               alt={teamMembers[activeTeamMember].name}
-              className="rounded-2xl shadow-2xl w-full h-[400px] md:h-[550px] object-cover transition-transform duration-500 group-hover:scale-105"
+              className="rounded-2xl shadow-2xl w-full h-[350px] sm:h-[400px] md:h-[550px] object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="hidden md:block absolute inset-0 rounded-2xl bg-gradient-to-t from-[#2e7d32]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="hidden md:block absolute -top-4 -right-4 w-full h-full border-2 border-[#2e7d32]/40 rounded-2xl -z-10 transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3"></div>
           </div>
 
-          <div className="space-y-6">
+          {/* Bio */}
+          <div className="space-y-6 px-2">
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
                 {teamMembers[activeTeamMember].name}
               </h3>
-              <p className="text-[#2e7d32] font-medium text-xl mt-2">
+              <p className="text-[#2e7d32] font-medium text-lg sm:text-xl mt-2">
                 {teamMembers[activeTeamMember].position}
               </p>
             </div>
             <div className="w-20 h-1 bg-[#2e7d32]/80"></div>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
               {teamMembers[activeTeamMember].bio}
             </p>
 
-            {/* Optional: Add social links or contact information */}
-            <div className="flex gap-4 justify-center items-center">
+            <div className="flex flex-wrap gap-4 justify-center sm:justify-start items-center">
               <button className="px-6 py-2 border border-[#2e7d32] text-[#2e7d32] font-semibold rounded-full shadow-md hover:bg-[#1b5e20] hover:text-white hover:border-[#1b5e20] hover:shadow-lg transition-all duration-300 ease-in-out">
                 Contact
               </button>
@@ -92,13 +97,11 @@ const AboutInnovator = () => {
                 Learn More
               </button>
             </div>
-
-
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default AboutInnovator;

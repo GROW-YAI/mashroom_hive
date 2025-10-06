@@ -32,24 +32,40 @@ const Hero = () => {
   };
 
   const slides = [
-    {
-      image: mushroom8,
-      title: "Fresh Organic Mushrooms",
-      description: "Locally sourced and naturally grown",
-    },
+   {
+  image: mushroom8,
+  title: (
+    <span className="flex items-center gap-2">
+      Fresh Organic Mushrooms
+      <img src="/images/mushr-01.png" alt="" className="w-16 h-16 inline-block" />
+    </span>
+  ),
+  description: "Locally sourced and naturally grown",
+},
     {
       image: mushroom5,
-      title: "Premium Quality",
+      title: ( <span className="flex items-center gap-2">
+        Premium Quality
+        <img src="/images/quali-01.png" alt=""  className="w-16 h-16 inline-block" />
+       </span>
+      ),
       description: "Hand-picked for the best flavor",
     },
     {
       image: mushroom6,
-      title: "Sustainable Farming",
+      title: ( <span className="flex items-center gap-2">
+        Sustainable Farming
+        <img src="/images/farm-02.jpg" alt="" className="w-16 h-16 inline-block"/>
+        </span>
+      ),
       description: "Environmentally conscious cultivation",
     },
     {
       image: mushroom7,
-      title: "Farm to Table",
+      title: ( <span className="flex items-center gap-2">
+        Farm to Table
+        <img src="/images/table-02.png" alt="" className="w-16 h-16 inline-block"/>
+        </span>),
       description: "Direct from our farms to your plate",
     },
   ];
