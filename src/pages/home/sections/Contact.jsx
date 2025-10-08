@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-// import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser'; 
+
 import {
   Box,
   Container,
@@ -13,8 +14,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
 } from '@mui/material';
+
 import {
   Email as EmailIcon,
   Phone as PhoneIcon,
@@ -70,44 +71,66 @@ const Contact = () => {
   };
 
   return (
-    <Box id="contact" sx={{ py: { xs: 4, md: 8 }, bgcolor: '#f5fff5' }}>
-      <Container maxWidth="lg">
-        <Typography variant="h2" component="h1" align="center" gutterBottom sx={{
-          fontWeight: 800,
-          fontSize: { xs: '2rem', md: '3.5rem' },
-          color: '#2e7d32',
-          fontFamily: 'Poppins',
-          mb: { xs: 4, md: 8 },
-          position: 'relative',
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            bottom: '-10px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '80px',
-            height: '4px',
-            backgroundColor: '#2e7d32',
-            borderRadius: '2px'
-          },
-          textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
-        }}>
+    <Box
+      id="contact"
+      sx={{
+        py: { xs: 4, md: 8 },
+        bgcolor: '#f5fff5',
+        overflowX: 'hidden',          // ✅ prevent horizontal scroll issues
+        maxWidth: '100vw',            // ✅ ensure container never exceeds viewport
+      }}
+    >
+      <Container
+        maxWidth="lg"
+        sx={{
+          overflowX: 'hidden',        // ✅ fix horizontal overflow inside Container
+          px: { xs: 2, md: 4 },       // ✅ responsive padding
+        }}
+      >
+        <Typography
+          variant="h2"
+          component="h1"
+          align="center"
+          gutterBottom
+          sx={{
+            fontWeight: 800,
+            fontSize: { xs: '2rem', md: '3.5rem' },
+            color: '#2e7d32',
+            fontFamily: 'Poppins',
+            mb: { xs: 4, md: 8 },
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '80px',
+              height: '4px',
+              backgroundColor: '#2e7d32',
+              borderRadius: '2px'
+            },
+            textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
+          }}
+        >
           Get In Touch With Us
         </Typography>
-        <div className="flex flex-col md:flex-row gap-6">
+
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
           {/* Contact Information */}
           <div className="w-full md:w-5/12">
-            <Paper elevation={0} sx={{ 
-              p: { xs: 3, md: 4 }, 
-              height: '100%', 
-              bgcolor: 'transparent' 
-            }}>
-              <Typography variant="h4" component="h2" gutterBottom fontWeight="bold" 
-                sx={{ 
-                  color: '#2e7d32', 
+            <Paper elevation={0} sx={{ p: { xs: 3, md: 4 }, height: '100%', bgcolor: 'transparent' }}>
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                fontWeight="bold"
+                sx={{
+                  color: '#2e7d32',
                   fontFamily: 'Poppins',
                   fontSize: { xs: '1.5rem', md: '2rem' }
-                }}>
+                }}
+              >
                 Get in Touch
               </Typography>
               <Typography variant="body1" sx={{ color: '#1b5e20', fontFamily: 'Poppins' }} paragraph>
@@ -140,7 +163,7 @@ const Contact = () => {
                   </ListItemIcon>
                   <ListItemText>
                     <Typography color="text.primary">
-                      (+233) 240 800951 
+                      (+233) 240 800951
                     </Typography>
                   </ListItemText>
                 </ListItem>
