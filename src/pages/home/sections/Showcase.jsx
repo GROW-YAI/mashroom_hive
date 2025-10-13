@@ -33,7 +33,7 @@ const Showcase = () => {
       image: powderedMushroom,
       // description: "Rich umami flavor, perfect for Asian cuisine",
       price: "GH₵ 25",
-      link: "https://paystack.com/buy/powdered-mushroom-jarasy"
+      link: "https://paystack.shop/pay/7anw2yx8uo"
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ const Showcase = () => {
       image: mushroomTeabag,
       // description: "Delicate texture with mild seafood-like flavor",
       price: "GH₵ 35",
-      link: "https://paystack.com/buy/mushroom-teabag-wrepvy"
+      link: "https://paystack.shop/pay/hy4tmd5lom"
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ const Showcase = () => {
       image: gingerMushroom,
       // description: "Meaty texture with subtle pine notes",
       price: "GH₵ 35",
-      link: "https://paystack.com/buy/ginger-mushroom-teabag-qandic"
+      link: "https://paystack.shop/pay/hy4tmd5lom"
     },
     {
       id: 4,
@@ -57,7 +57,7 @@ const Showcase = () => {
       image: freshMushroom,
       // description: "Unique texture, known for cognitive benefits",
       price: "GH₵ 25",
-      link: "https://paystack.com/buy/fresh-mushroom-jgqswm"
+      link: "https://paystack.shop/pay/7anw2yx8uo"
     },
     {
       id: 5,
@@ -65,7 +65,7 @@ const Showcase = () => {
       image: mintMushroom,
       // description: "Traditional medicinal mushroom for wellness",
       price: "GH₵ 35",
-      link: "https://paystack.com/buy/mint-mushroom-teabag-rryrjl"
+      link: "https://paystack.shop/pay/hy4tmd5lom"
     },
     // {
     //   id: 6,
@@ -85,8 +85,8 @@ const Showcase = () => {
     // },
     // {
     //   id: 8,
-    //   name: "Cordyceps",
-    //   image: product8,
+    //   name: "Concepts",
+    //   image: concepts,
     //   description: "Energy-boosting medicinal mushroom",
     //   price: "GH₵15.99",
     //   link: "https://paystack.com/buy/mushroom-tea-mjdywc"

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import emailjs from '@emailjs/browser'; 
-
 import {
   Box,
   Container,
@@ -43,27 +41,37 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
+      //  Send form data using HomesPree public endpoint (no .env or install needed)
+      const response = await fetch("https://formspree.io/f/mvgwvbjp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+        body: JSON.stringify({
+          to: "themushroomhive@gmail.com", 
+          from: formData.email,
+          subject: formData.subject || "New Contact Form Message",
+          text: `
+            Name: ${formData.name}
+            Email: ${formData.email}
+            Subject: ${formData.subject}
+            Message: ${formData.message}
+          `,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to send message");
 
       setStatus({
         type: 'success',
-        message: 'Thank you! Your message has been sent successfully.'
+        message: 'Thank you! Your message has been sent successfully.',
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error(error);
       setStatus({
         type: 'error',
-        message: 'Oops! Something went wrong. Please try again later.'
+        message: 'Oops! Something went wrong. Please try again later.',
       });
     } finally {
       setLoading(false);
@@ -76,15 +84,15 @@ const Contact = () => {
       sx={{
         py: { xs: 4, md: 8 },
         bgcolor: '#f5fff5',
-        overflowX: 'hidden',          // ✅ prevent horizontal scroll issues
-        maxWidth: '100vw',            // ✅ ensure container never exceeds viewport
+        overflowX: 'hidden',
+        maxWidth: '100vw',
       }}
     >
       <Container
         maxWidth="lg"
         sx={{
-          overflowX: 'hidden',        // ✅ fix horizontal overflow inside Container
-          px: { xs: 2, md: 4 },       // ✅ responsive padding
+          overflowX: 'hidden',
+          px: { xs: 2, md: 4 },
         }}
       >
         <Typography
@@ -108,9 +116,9 @@ const Contact = () => {
               width: '80px',
               height: '4px',
               backgroundColor: '#2e7d32',
-              borderRadius: '2px'
+              borderRadius: '2px',
             },
-            textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
+            textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
           }}
         >
           Get In Touch With Us
@@ -128,7 +136,7 @@ const Contact = () => {
                 sx={{
                   color: '#2e7d32',
                   fontFamily: 'Poppins',
-                  fontSize: { xs: '1.5rem', md: '2rem' }
+                  fontSize: { xs: '1.5rem', md: '2rem' },
                 }}
               >
                 Get in Touch
@@ -145,11 +153,11 @@ const Contact = () => {
                   <ListItemText>
                     <Typography
                       component="a"
-                      href="mailto:mushroom@hive.com"
+                      href="mailto:themushroomhive@gmail.com"
                       sx={{
                         color: '#1b5e20',
                         textDecoration: 'none',
-                        '&:hover': { color: '#2e7d32' }
+                        '&:hover': { color: '#2e7d32' },
                       }}
                     >
                       themushroomhive@gmail.com
@@ -255,8 +263,8 @@ const Contact = () => {
                         bgcolor: '#2e7d32',
                         py: { xs: 1.5, md: 2 },
                         '&:hover': {
-                          bgcolor: '#1b5e20'
-                        }
+                          bgcolor: '#1b5e20',
+                        },
                       }}
                     >
                       {loading ? 'Sending...' : 'Send Message'}
