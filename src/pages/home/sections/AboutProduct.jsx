@@ -7,7 +7,7 @@ import secondMushroom from "../../../../public/images/shiitake-mushroom.jpg";
 import thirdMushroom from "../../../../public/images/reishi-mushroom.jpg";
 import fourthMushroom from "../../../../public/images/oyster-mushroom.jpg";
 import fifthMushroom from "../../../../public/images/chaga-mushroom.jpg";
-import sixthMushroom from "../../../../public/images/mushroom (5).jpg";
+import sixthMushroom from "../../../../public/images/concepts.jpg";
 
 const AboutProduct = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -51,7 +51,7 @@ const AboutProduct = () => {
       benefits: ["Immune Support", "Antioxidant", "Heart Health"],
     },
     {
-      title: "Cordyceps",
+      title: "Concepts",
       category: "medicinal",
       description: "Natural energy and vitality boost",
       image: sixthMushroom,

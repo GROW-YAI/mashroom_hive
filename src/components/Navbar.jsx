@@ -99,7 +99,7 @@ const Navbar = () => {
 
             {/* Shop Now Button */}
             <a
-              href="https://paystack.shop/themushroomhive"
+              href="https://paystack.shop/pay/5g2hclsh1l"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center gap-2 px-6 py-2.5 bg-green-600 text-white overflow-hidden rounded-lg group"
@@ -142,7 +142,7 @@ const Navbar = () => {
 
               {/* Store Link */}
               <a
-                href="https://paystack.shop/themushroomhive"
+                href="https://paystack.shop/pay/5g2hclsh1l"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-1/4 items-center gap-2 px-6 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300"
