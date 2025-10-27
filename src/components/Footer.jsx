@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from '../../public/images/logo.png';
+import logo from "../../public/images/logo.png";
 import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -39,9 +39,21 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex justify-center items-center space-x-4 mb-4">
             {[
-              { Icon: FaFacebookF, color: "hover:bg-blue-600", link: "https://www.facebook.com/themushroomhive?mibextid=ZbWKwL" },
-              { Icon: FaInstagram, color: "hover:bg-pink-600", link: "https://www.instagram.com/the_mushroomhive?igsh=MW82cGZmY2xydHgwdw==" },
-              { Icon: FaWhatsapp, color: "hover:bg-green-600", link: "https://wa.me/+233240800951" }
+              {
+                Icon: FaFacebookF,
+                color: "hover:bg-blue-600",
+                link: "https://www.facebook.com/themushroomhive?mibextid=ZbWKwL",
+              },
+              {
+                Icon: FaInstagram,
+                color: "hover:bg-pink-600",
+                link: "https://www.instagram.com/the_mushroomhive?igsh=MW82cGZmY2xydHgwdw==",
+              },
+              {
+                Icon: FaWhatsapp,
+                color: "hover:bg-green-600",
+                link: "https://wa.me/+233240800951",
+              },
             ].map(({ Icon, color, link }) => (
               <a
                 key={color}
@@ -59,18 +71,29 @@ const Footer = () => {
           <div className="space-y-1 mb-4">
             {/* Quick Links */}
             <div className="border border-emerald-100 rounded-lg overflow-hidden bg-white shadow-sm">
-              <button 
-                onClick={() => toggleSection('links')}
+              <button
+                onClick={() => toggleSection("links")}
                 className="w-full py-2 px-4 flex justify-between items-center text-left text-emerald-800 font-semibold"
               >
                 <span className="font-['Poppins'] text-sm">Quick Links</span>
-                {activeSection === 'links' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                {activeSection === "links" ? (
+                  <IoIosArrowUp />
+                ) : (
+                  <IoIosArrowDown />
+                )}
               </button>
-              
-              {activeSection === 'links' && (
+
+              {activeSection === "links" && (
                 <div className="px-4 py-2 bg-white border-t border-emerald-50">
                   <nav className="flex flex-col space-y-1">
-                    {['Home', 'About', 'Product', 'Testimonials', 'Contact Us', 'Shop'].map((item) => (
+                    {[
+                      "Home",
+                      "About",
+                      "Product",
+                      "Testimonials",
+                      "Contact Us",
+                      "Shop",
+                    ].map((item) => (
                       <a
                         key={item}
                         href={`#${item.toLowerCase()}`}
@@ -86,15 +109,19 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="border border-emerald-100 rounded-lg overflow-hidden bg-white shadow-sm">
-              <button 
-                onClick={() => toggleSection('contact')}
+              <button
+                onClick={() => toggleSection("contact")}
                 className="w-full py-2 px-4 flex justify-between items-center text-left text-emerald-800 font-semibold"
               >
                 <span className="font-['Poppins'] text-sm">Contact Us</span>
-                {activeSection === 'contact' ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                {activeSection === "contact" ? (
+                  <IoIosArrowUp />
+                ) : (
+                  <IoIosArrowDown />
+                )}
               </button>
-              
-              {activeSection === 'contact' && (
+
+              {activeSection === "contact" && (
                 <div className="px-4 py-2 bg-white border-t border-emerald-50">
                   <div className="space-y-1">
                     <a
@@ -149,7 +176,14 @@ const Footer = () => {
                 Quick Links
               </h3>
               <nav className="flex flex-col space-y-1.5">
-                {['Home', 'About', 'Product', 'Testimonials', 'Contact Us','Shop'].map((item) => (
+                {[
+                  "Home",
+                  "About",
+                  "Product",
+                  "Testimonials",
+                  "Contact Us",
+                  "Shop",
+                ].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -161,55 +195,69 @@ const Footer = () => {
               </nav>
             </div>
 
-            {/* Contact Section */}
-            <div className="md:col-span-4 space-y-4">
+            {/* Contact Section - UPDATED */}
+            <div className="md:col-span-4 space-y-3">
               <h3 className="text-base font-bold text-emerald-800 font-['Poppins']">
                 Connect With Us
               </h3>
 
-              {/* Social Icons */}
-              <div className="flex justify-center items-center space-x-3">
-                {[
-                  { Icon: FaFacebookF, color: "hover:bg-blue-600", link: "https://www.facebook.com/themushroomhive?mibextid=ZbWKwL" },
-                  { Icon: FaInstagram, color: "hover:bg-pink-600", link: "https://www.instagram.com/the_mushroomhive?igsh=MW82cGZmY2xydHgwdw==" },
-                  { Icon: FaWhatsapp, color: "hover:bg-green-600", link: "https://wa.me/+233240800951" }
-                ].map(({ Icon, color, link }) => (
+              <div className="flex flex-col space-y-3">
+                {/* Social Icons */}
+                <div className="flex items-center space-x-3">
+                  {[
+                    {
+                      Icon: FaFacebookF,
+                      color: "hover:bg-blue-600",
+                      link: "https://www.facebook.com/themushroomhive?mibextid=ZbWKwL",
+                    },
+                    {
+                      Icon: FaInstagram,
+                      color: "hover:bg-pink-600",
+                      link: "https://www.instagram.com/the_mushroomhive?igsh=MW82cGZmY2xydHgwdw==",
+                    },
+                    {
+                      Icon: FaWhatsapp,
+                      color: "hover:bg-green-600",
+                      link: "https://wa.me/+233240800951",
+                    },
+                  ].map(({ Icon, color, link }) => (
+                    <a
+                      key={color}
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-2 rounded-full bg-white shadow-md transform hover:-translate-y-1 transition-all duration-300 ${color} hover:text-white group`}
+                    >
+                      <Icon className="w-4 h-4 transform transition-transform group-hover:rotate-12" />
+                    </a>
+                  ))}
+                </div>
+
+                {/* Contact Info */}
+                <div className="space-y-1.5">
                   <a
-                    key={color}
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 rounded-full bg-white shadow-md transform hover:-translate-y-1 transition-all duration-300 ${color} hover:text-white group`}
+                    href="mailto:themushroomhive@gmail.com"
+                    className="flex items-center space-x-2 text-gray-600 hover:text-emerald-600 text-sm"
                   >
-                    <Icon className="w-4 h-4 transform transition-transform group-hover:rotate-12" />
+                    <Email className="w-4 h-4" />
+                    <span>themushroomhive@gmail.com</span>
                   </a>
-                ))}
-              </div>
 
-              {/* Contact Info */}
-              <div className="space-y-1.5">
-                <a
-                  href="mailto:themushroomhive@gmail.com"
-                  className="flex items-center space-x-2 text-gray-600 hover:text-emerald-600 text-sm"
-                >
-                  <Email className="w-4 h-4" />
-                  <span>themushroomhive@gmail.com</span>
-                </a>
+                  <a
+                    href="tel:+233240800951"
+                    className="flex items-center space-x-1 text-gray-600 hover:text-emerald-600 text-sm"
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span>+233 240 800 951</span>
+                  </a>
 
-                <a
-                  href="tel:+233240800951"
-                  className="flex items-center space-x-1 text-gray-600 hover:text-emerald-600 text-sm"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>+233 240 800 951</span>
-                </a>
-
-                <a
-                  href="tel:+233501425027"
-                  className="pl-6 text-gray-600 hover:text-emerald-600 text-sm"
-                >
-                  +233 501 425 027
-                </a>
+                  <a
+                    href="tel:+233501425027"
+                    className="pl-6 text-gray-600 hover:text-emerald-600 text-sm"
+                  >
+                    +233 501 425 027
+                  </a>
+                </div>
               </div>
             </div>
           </div>
