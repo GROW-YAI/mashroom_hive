@@ -182,7 +182,6 @@ const Footer = () => {
                   "Product",
                   "Testimonials",
                   "Contact Us",
-                  "Shop",
                 ].map((item) => (
                   <a
                     key={item}
