@@ -1,81 +1,18 @@
-# Landing Page Template
+# Mushroom Hive
 
-This is a **Landing Page Template** built with **Vite + React + TailwindCSS**. It provides a clean and structured setup for developers to quickly build and customize landing pages.
+## Project Overview
+Mushroom Hive is a modern web application showcasing innovative mushroom products, including fresh mushrooms, teas, and powders (chaga, lion's mane, oyster, reishi, shiitake). Features product showcases, farm images, team info, testimonials, and contact form. Built with Vite + React + TypeScript + Tailwind CSS. The Boafo accessibility widget is integrated to ensure the site is accessible to all users, including those with disabilities.
 
-## 🚀 Features
+## How to Get Your Boafo API Key
+1. Visit [boafo.co](https://boafo.co) to register.
+2. Retrieve your API key from the dashboard.
 
-- **Vite** for blazing-fast development
-- **React** for modular and scalable UI
-- **TailwindCSS** for efficient styling
-- Well-structured project folder
+## Boafo Widget Integration Guide
+Official guide: [https://drive.google.com/file/d/1tvwK-sBZI2a4uldd6z5LD1iLblSl3WbG/view?usp=sharing](https://drive.google.com/file/d/1tvwK-sBZI2a4uldd6z5LD1iLblSl3WbG/view?usp=sharing)
 
-## 📦 Getting Started
-
-Follow the steps below to clone the repository, install dependencies, and run the project.
-
-### 🔹 Prerequisites
-
-Ensure you have the following installed on your system:
-
-- [Node.js](https://nodejs.org/) (LTS recommended)
-- [Git](https://git-scm.com/)
-
-### 📥 Clone the Repository
-
-```sh
-git clone https://github.com/gorillagh/landing-page-setup.git
-```
-
-### 📂 Navigate into the Project Directory
-
-```sh
-cd landing-page-setup
-```
-
-### 📦 Install Dependencies
-
-```sh
-npm install
-```
-
-### 🚀 Run the Development Server
-
-```sh
-npm run dev
-```
-
-The project should now be running at `http://localhost:5173/` (or the port specified in your terminal).
-
-## 🏗️ Building for Production
-
-To generate a production-ready build, run:
-
-```sh
-npm run build
-```
-
-## 📄 Project Structure
-
-```
-landing-page-template/
-├── src/                 # Source files
-│   ├── assets/          # Static assets (images, icons, etc.)
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Page components
-│   ├── layouts/           # Page layouts
-│   ├── App.jsx          # Root component
-│   ├── main.jsx         # React entry point
-├── public/              # Static files
-├── index.html           # Main HTML file
-├── package.json         # Project dependencies & scripts
-├── vite.config.js       # Vite configuration
-└── README.md            # Project documentation
-```
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-Happy coding! 🚀
+## Setup Instructions
+1. Clone the repository
+2. Run `npm install`
+3. Copy `.env.example` to `.env`
+4. Fill in your Boafo API key in `.env`
+5. Run `npm run dev` and open the browser to verify the widget loads
