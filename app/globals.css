@@ -1,0 +1,24 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+@tailwind utilities;
+
+/* Performance optimizations */
+/* Reduce specificity and improve render performance */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'), local('Inter-Regular');
+}
+
+/* Reduce layout thrashing */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
